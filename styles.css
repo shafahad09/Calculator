@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    height: 100vh;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    border: 2px;
+    border-color: black;
+    border-style: double;
+    border-radius: 10px;
+
+    padding: 5px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.display {
+    width: 45ch;
+    height: 9vh;
+
+    padding: 5px;
+    border: 2px;
+    border-color: black;
+    border-style: double;
+    border-radius: 10px;
+
+    background-color:coral;
+}
+
+.row1, .row2, .row3, .row4, .row5{
+    width: 45ch;
+    height: 7vh;
+    
+    padding: 7px;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+
+}
+
+.row1 > .clear, .backspace {
+    width: 50%;
+    
+    border: 2px;
+    border-color: black;
+    border-style: double;
+    border-radius: 10px;
+
+    background-color: aqua;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 32px;
+}
+
+.row2 > .seven, .eight, .nine, .divide {
+    width: 25%;
+
+    border: 2px;
+    border-color: black;
+    border-style: double;
+    border-radius: 10px;
+
+    background-color: aqua;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 32px;
+}
+
+.row3 > .four, .five, .six, .multiplication {
+    width: 25%;
+
+    border: 2px;
+    border-color: black;
+    border-style: double;
+    border-radius: 10px;
+
+    background-color: aqua;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 32px;
+}
+
+.row4 > .one, .two, .three, .subtraction {
+    width: 25%;
+
+    border: 2px;
+    border-color: black;
+    border-style: double;
+    border-radius: 10px;
+
+    background-color: aqua;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 32px;
+}
+
+.row5 > .zero, .dot, .equals, .addition {
+    width: 25%;
+
+    border: 2px;
+    border-color: black;
+    border-style: double;
+    border-radius: 10px;
+
+    background-color: aqua;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 32px;
+}
