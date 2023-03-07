@@ -44,9 +44,13 @@ const division = document.querySelector('.divide');
 const equals = document.querySelector('.equals');
 const clear = document.querySelector('.clear');
 const backspace = document.querySelector('.backspace');
+const dot = document.querySelector('.dot');
 
 let num = 0;
 let operator = '';
+let equalsOn = false;
+let decimalOn = false;
+let count = 0;
 
 zero.addEventListener('click', () => {
     if(operator) {
@@ -55,8 +59,16 @@ zero.addEventListener('click', () => {
         display.textContent = 0;
     }
     else {
-        display.textContent = 0;
-        num = 0;
+        if(!equalsOn) {
+            num = (num * 10) + 0;
+            display.textContent = num;
+        }
+        if(equalsOn) {
+            equalsOn = false;
+            num = 0;
+            num = (num * 10) + 0;
+            display.textContent = num;
+        }
     }
 })
 
@@ -67,8 +79,16 @@ one.addEventListener('click', () => {
         display.textContent = 1;
     }
     else {
-        display.textContent = 1;
-        num = 1;
+        if(!equalsOn) {
+            num = (num * 10) + 1;
+            display.textContent = num;
+        }
+        if(equalsOn) {
+            equalsOn = false;
+            num = 0;
+            num = (num * 10) + 1;
+            display.textContent = num;
+        }
     }
 })
 
@@ -79,8 +99,16 @@ two.addEventListener('click', () => {
         display.textContent = 2;
     }
     else {
-        display.textContent = 2;
-        num = 2;
+        if(!equalsOn) {
+            num = (num * 10) + 2;
+            display.textContent = num;
+        }
+        if(equalsOn) {
+            equalsOn = false;
+            num = 0;
+            num = (num * 10) + 2;
+            display.textContent = num;
+        }
     }
 })
 
@@ -91,8 +119,16 @@ three.addEventListener('click', () => {
         display.textContent = 3;
     }
     else {
-        display.textContent = 3;
-        num = 3;
+        if(!equalsOn) {
+            num = (num * 10) + 3;
+            display.textContent = num;
+        }
+        if(equalsOn) {
+            equalsOn = false;
+            num = 0;
+            num = (num * 10) + 3;
+            display.textContent = num;
+        }
     }
 })
 
@@ -103,8 +139,16 @@ four.addEventListener('click', () => {
         display.textContent = 4;
     }
     else {
-        display.textContent = 4;
-        num = 4;
+        if(!equalsOn) {
+            num = (num * 10) + 4;
+            display.textContent = num;
+        }
+        if(equalsOn) {
+            equalsOn = false;
+            num = 0;
+            num = (num * 10) + 4;
+            display.textContent = num;
+        }
     }
 })
 
@@ -115,8 +159,16 @@ five.addEventListener('click', () => {
         display.textContent = 5;
     }
     else {
-        display.textContent = 5;
-        num = 5;
+        if(!equalsOn) {
+            num = (num * 10) + 5;
+            display.textContent = num;
+        }
+        if(equalsOn) {
+            equalsOn = false;
+            num = 0;
+            num = (num * 10) + 5;
+            display.textContent = num;
+        }
     }
 })
 
@@ -127,8 +179,16 @@ six.addEventListener('click', () => {
         display.textContent = 6;
     }
     else {
-        display.textContent = 6;
-        num = 6;
+        if(!equalsOn) {
+            num = (num * 10) + 6;
+            display.textContent = num;
+        }
+        if(equalsOn) {
+            equalsOn = false;
+            num = 0;
+            num = (num * 10) + 6;
+            display.textContent = num;
+        }
     }
 })
 
@@ -139,8 +199,16 @@ seven.addEventListener('click', () => {
         display.textContent = 7;
     }
     else {
-        display.textContent = 7;
-        num = 7;
+        if(!equalsOn) {
+            num = (num * 10) + 7;
+            display.textContent = num;
+        }
+        if(equalsOn) {
+            equalsOn = false;
+            num = 0;
+            num = (num * 10) + 7;
+            display.textContent = num;
+        }
     }
 })
 
@@ -151,8 +219,16 @@ eight.addEventListener('click', () => {
         display.textContent = 8;
     }
     else {
-        display.textContent = 8;
-        num = 8;
+        if(!equalsOn) {
+            num = (num * 10) + 8;
+            display.textContent = num;
+        }
+        if(equalsOn) {
+            equalsOn = false;
+            num = 0;
+            num = (num * 10) + 8;
+            display.textContent = num;
+        }
     }
 })
 
@@ -163,8 +239,16 @@ nine.addEventListener('click', () => {
         display.textContent = 9;
     }
     else {
-        display.textContent = 9;
-        num = 9;
+        if(!equalsOn) {
+            num = (num * 10) + 9;
+            display.textContent = num;
+        }
+        if(equalsOn) {
+            equalsOn = false;
+            num = 0;
+            num = (num * 10) + 9;
+            display.textContent = num;
+        }
     }
 })
 
@@ -189,10 +273,25 @@ division.addEventListener('click', () => {
 equals.addEventListener('click', () => {
     display.textContent = num;
     operator = '';
+    equalsOn = true;
 })
 
 clear.addEventListener('click', () => {
     display.textContent = 0;
     operator = '';
     num = 0;
+    count = 0;
+    decimalOn = false;
+})
+
+backspace.addEventListener('click', () => {
+    num = Math.floor(num / 10);
+    display.textContent = num;
+})
+
+dot.addEventListener('click', () => {
+    decimalOn = true;
+    count = 1;
+    num = num + 0.0;
+    display.textContent = num + ".0";
 })
