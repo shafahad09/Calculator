@@ -44,19 +44,16 @@ const division = document.querySelector('.divide');
 const equals = document.querySelector('.equals');
 const clear = document.querySelector('.clear');
 const backspace = document.querySelector('.backspace');
-const dot = document.querySelector('.dot');
 
 let num = 0;
+let num2 = 0;
 let operator = '';
 let equalsOn = false;
-let decimalOn = false;
-let count = 0;
 
 zero.addEventListener('click', () => {
     if(operator) {
-        num = operate(operator, num, 0);
-        operator = '';
-        display.textContent = 0;
+        num2 = (num2 * 10) + 0;
+        display.textContent = num2;
     }
     else {
         if(!equalsOn) {
@@ -74,9 +71,8 @@ zero.addEventListener('click', () => {
 
 one.addEventListener('click', () => {
     if(operator) {
-        num = operate(operator, num, 1);
-        operator = '';
-        display.textContent = 1;
+        num2 = (num2 * 10) + 1;
+        display.textContent = num2;
     }
     else {
         if(!equalsOn) {
@@ -94,9 +90,8 @@ one.addEventListener('click', () => {
 
 two.addEventListener('click', () => {
     if(operator) {
-        num = operate(operator, num, 2);
-        operator = '';
-        display.textContent = 2;
+        num2 = (num2 * 10) + 2;
+        display.textContent = num2;
     }
     else {
         if(!equalsOn) {
@@ -114,9 +109,8 @@ two.addEventListener('click', () => {
 
 three.addEventListener('click', () => {
     if(operator) {
-        num = operate(operator, num, 3);
-        operator = '';
-        display.textContent = 3;
+        num2 = (num2 * 10) + 3;
+        display.textContent = num2;
     }
     else {
         if(!equalsOn) {
@@ -134,9 +128,8 @@ three.addEventListener('click', () => {
 
 four.addEventListener('click', () => {
     if(operator) {
-        num = operate(operator, num, 4);
-        operator = '';
-        display.textContent = 4;
+        num2 = (num2 * 10) + 4;
+        display.textContent = num2;
     }
     else {
         if(!equalsOn) {
@@ -154,9 +147,8 @@ four.addEventListener('click', () => {
 
 five.addEventListener('click', () => {
     if(operator) {
-        num = operate(operator, num, 5);
-        operator = '';
-        display.textContent = 5;
+        num2 = (num2 * 10) + 5;
+        display.textContent = num2;
     }
     else {
         if(!equalsOn) {
@@ -174,9 +166,8 @@ five.addEventListener('click', () => {
 
 six.addEventListener('click', () => {
     if(operator) {
-        num = operate(operator, num, 6);
-        operator = '';
-        display.textContent = 6;
+        num2 = (num2 * 10) + 6;
+        display.textContent = num2;
     }
     else {
         if(!equalsOn) {
@@ -194,9 +185,8 @@ six.addEventListener('click', () => {
 
 seven.addEventListener('click', () => {
     if(operator) {
-        num = operate(operator, num, 7);
-        operator = '';
-        display.textContent = 7;
+        num2 = (num2 * 10) + 7;
+        display.textContent = num2;
     }
     else {
         if(!equalsOn) {
@@ -214,9 +204,8 @@ seven.addEventListener('click', () => {
 
 eight.addEventListener('click', () => {
     if(operator) {
-        num = operate(operator, num, 8);
-        operator = '';
-        display.textContent = 8;
+        num2 = (num2 * 10) + 8;
+        display.textContent = num2;
     }
     else {
         if(!equalsOn) {
@@ -234,9 +223,8 @@ eight.addEventListener('click', () => {
 
 nine.addEventListener('click', () => {
     if(operator) {
-        num = operate(operator, num, 9);
-        operator = '';
-        display.textContent = 9;
+        num2 = (num2 * 10) + 9;
+        display.textContent = num2;
     }
     else {
         if(!equalsOn) {
@@ -255,22 +243,42 @@ nine.addEventListener('click', () => {
 
 
 addition.addEventListener('click', () => {
+    if(num && num2){
+        num = operate(operator, num, num2);
+        num2 = 0;
+    }
     operator = '+';
 });
 
 subtraction.addEventListener('click', () => {
+    if(num && num2){
+        num = operate(operator, num, num2);
+        num2 = 0;
+    }
     operator = '-';
 });
 
 multiplication.addEventListener('click', () => {
+    if(num && num2){
+        num = operate(operator, num, num2);
+        num2 = 0;
+    }
     operator = '*';
 });
 
 division.addEventListener('click', () => {
+    if(num && num2){
+        num = operate(operator, num, num2);
+        num2 = 0;
+    }
     operator = '/';
 });
 
 equals.addEventListener('click', () => {
+    if(num && num2){
+        num = operate(operator, num, num2);
+        num2 = 0;
+    }
     display.textContent = num;
     operator = '';
     equalsOn = true;
@@ -289,9 +297,3 @@ backspace.addEventListener('click', () => {
     display.textContent = num;
 })
 
-dot.addEventListener('click', () => {
-    decimalOn = true;
-    count = 1;
-    num = num + 0.0;
-    display.textContent = num + ".0";
-})
