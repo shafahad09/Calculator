@@ -6,7 +6,8 @@
 
 body {
     height: 100vh;
-    
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,6 +28,9 @@ body {
 .display {
     width: 45ch;
     height: 9vh;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
 
     padding: 5px;
     border: 2px;
@@ -133,4 +137,19 @@ body {
     align-items: center;
 
     font-size: 32px;
+}
+
+.clear:hover, .backspace:hover, .zero:hover, .one:hover, .two:hover, .three:hover, .four:hover, .five:hover, .six:hover, .seven:hover, .eight:hover, .nine:hover {
+    cursor: pointer;
+    background-color: antiquewhite;
+}
+
+.addition:hover, .subtraction:hover, .multiplication:hover, .divide:hover {
+    cursor: pointer;
+    background-color: burlywood;
+}
+
+.equals:hover {
+    cursor: pointer;
+    background-color:crimson;
 }
